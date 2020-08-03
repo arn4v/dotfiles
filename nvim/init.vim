@@ -65,10 +65,10 @@ autocmd filetype typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " Remap HJKL
 "noremap h <Nop>
-noremap ; l
-noremap j k
-noremap k j
-noremap l h
+" noremap ; l
+" noremap j k
+" noremap k j
+" noremap l h
 
 " Disable the arrow keys
 noremap <Up> <Nop>

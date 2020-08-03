@@ -24,5 +24,5 @@ call plug#begin()
     Plug 'mbbill/undotree'
     Plug 'TaDaa/vimade'
     Plug 'vuciv/vim-bujo'
+    Plug 'tpope/vim-commentary'
 call plug#end()
-
