@@ -3,7 +3,7 @@ call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'airblade/vim-gitgutter'
 "    Plug 'SirVer/ultisnips'
-"    Plug 'honza/vim-snippets'
+    Plug 'honza/vim-snippets'
     Plug 'pangloss/vim-javascript'
     Plug 'junegunn/goyo.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -24,6 +24,7 @@ call plug#begin()
     Plug 'TaDaa/vimade'
     Plug 'vuciv/vim-bujo'
     Plug 'tpope/vim-commentary'
+    Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 
     " Themes
     Plug 'ntk148v/vim-horizon'
@@ -35,3 +36,10 @@ call plug#begin()
     Plug 'junegunn/limelight.vim'
     Plug 'morhetz/gruvbox'
 call plug#end()
+
+source $HOME/.config/nvim/plugins/aerojump.vim
+source $HOME/.config/nvim/plugins/coc.vim
+source $HOME/.config/nvim/plugins/goyo.vim
+source $HOME/.config/nvim/plugins/limelight.vim
+source $HOME/.config/nvim/plugins/nerdtree.vim
+source $HOME/.config/nvim/plugins/rainbow.vim
