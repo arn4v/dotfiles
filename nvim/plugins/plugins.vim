@@ -23,7 +23,7 @@ call plug#begin()
     Plug 'mbbill/undotree'
     Plug 'TaDaa/vimade'
     Plug 'tpope/vim-commentary'
-    Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
+    " Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 
     " Themes
     Plug 'ntk148v/vim-horizon'
@@ -36,7 +36,7 @@ call plug#begin()
     Plug 'morhetz/gruvbox'
 call plug#end()
 
-source $HOME/.config/nvim/plugins/aerojump.vim
+" source $HOME/.config/nvim/plugins/aerojump.vim
 source $HOME/.config/nvim/plugins/coc.vim
 source $HOME/.config/nvim/plugins/goyo.vim
 source $HOME/.config/nvim/plugins/limelight.vim
