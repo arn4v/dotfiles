@@ -22,7 +22,6 @@ call plug#begin()
     Plug 'sheerun/vim-polyglot'
     Plug 'mbbill/undotree'
     Plug 'TaDaa/vimade'
-    Plug 'vuciv/vim-bujo'
     Plug 'tpope/vim-commentary'
     Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
 
