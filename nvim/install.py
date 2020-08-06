@@ -14,7 +14,15 @@ nvim_dir = (
 if not os.path.exists(nvim_dir):
     os.mkdir(nvim_dir)
 
-to_symlink = ["init.vim", "coc-settings.json", "plugins", "themes"]
+to_ignore = ["install.py", ".vscode"]
 
-for f in to_symlink:
-    os.symlink(os.path.join(cur_dir, f), os.path.join(nvim_dir, f))
+for f in os.listdir(cur_dir):
+    if f not in to_ignore:
+        local_file = os.path.join(cur_dir, f)
+        target_file = os.path.join(nvim_dir, f)
+        if os.path.exists(target_file):
+            if not os.readlink(target_file) == local_file:
+                os.remove(target_file)
+                os.symlink(local_file, target_file)
+        else:
+            os.symlink(local_file, target_file)
