@@ -1,7 +1,6 @@
 " Always source these
 source $HOME/.config/nvim/plugins/plugins.vim
 source $HOME/.config/nvim/plugins/coc.vim
-source $HOME/.config/nvim/themes/horizon.vim
 " Defaults
 set noerrorbells
 set tabstop=4 softtabstop=4
@@ -13,6 +12,8 @@ set nowrap
 set smartcase
 set noswapfile
 set incsearch
+set nobackup
+set nowritebackup
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 " yank in vim and then paste to other programs
@@ -46,15 +47,18 @@ let g:limelight_priority = -1
 " We always want to use Goyo when using limelight
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-noremap <leader>gg :Goyo<cr>
+noremap <Leader>gg :Goyo<cr>
 
 let NERDTreeShowHidden=1
 
 " Theme Stuff
 set termguicolors
-let mapleader = ","
-nmap <leader>ne :NERDTree<cr>
+source $HOME/.config/nvim/themes/gruvbox.vim
 
+" let mapleader = ","
+" nmap <Leader>ne <Plug>NERDTree<cr>
+" nmap <leader>ne :NERDTree<cr>
+map <silent> <C-n> :NERDTreeToggle<CR>
 
 " File specific settings
 " ----------------------
@@ -64,7 +68,7 @@ autocmd filetype typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 
 " Remap HJKL
-"noremap h <Nop>
+" noremap h <Nop>
 " noremap ; l
 " noremap j k
 " noremap k j
