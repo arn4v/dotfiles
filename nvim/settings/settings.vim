@@ -21,6 +21,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 set clipboard+=unnamedplus
 set number
 set relativenumber
+let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 " File specific settings
 " ----------------------
