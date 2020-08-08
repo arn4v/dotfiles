@@ -3,6 +3,8 @@ call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'airblade/vim-gitgutter'
 "    Plug 'SirVer/ultisnips'
+    Plug 'gabrielelana/vim-markdown'
+    Plug 'mattn/emmet-vim'
     Plug 'honza/vim-snippets'
     Plug 'pangloss/vim-javascript'
     Plug 'junegunn/goyo.vim'

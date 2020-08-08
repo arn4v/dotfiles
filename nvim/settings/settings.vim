@@ -16,6 +16,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " yank in vim and then paste to other programs
 set clipboard+=unnamedplus
 set number
+set relativenumber
 
 " File specific settings
 " ----------------------
@@ -36,4 +37,3 @@ noremap <Up> <Nop>
 noremap <Right> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
-       
