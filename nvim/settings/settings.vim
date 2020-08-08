@@ -1,6 +1,10 @@
 " Defaults
+set encoding=utf-8      | " Default file encoding
+set fileencoding=utf-8  | " Default file encoding
+set fileencodings=utf-8 | " Default file encoding
 set noerrorbells
-set tabstop=4 softtabstop=4
+set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent

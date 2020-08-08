@@ -1,45 +1,51 @@
 " vim plug stuff
 call plug#begin()
-    Plug 'preservim/nerdtree'
     Plug 'airblade/vim-gitgutter'
-"    Plug 'SirVer/ultisnips'
-    Plug 'gabrielelana/vim-markdown'
-    Plug 'mattn/emmet-vim'
-    Plug 'honza/vim-snippets'
-    Plug 'pangloss/vim-javascript'
-    Plug 'junegunn/goyo.vim'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'udalov/kotlin-vim'
-    Plug 'leafgarland/typescript-vim'
     Plug 'dart-lang/dart-vim-plugin'
-"    Plug 'psf/black'
+    Plug 'gabrielelana/vim-markdown'
+    Plug 'honza/vim-snippets'
+    Plug 'junegunn/goyo.vim'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'mattn/emmet-vim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'pangloss/vim-javascript'
+    Plug 'preservim/nerdtree'
+    Plug 'udalov/kotlin-vim'
     Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install',
       \ 'branch': 'release/0.x'
       \ }
-    " Fuzzy file finder
+    """
+    " Plug 'itchyny/vim-cursorword'
+    " Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'TaDaa/vimade'
+    Plug 'chrisbra/unicode.vim'
+    Plug 'jeffkreeftmeijer/vim-numbertoggle'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/vim-easy-align'
     Plug 'luochen1990/rainbow'
-    Plug 'sheerun/vim-polyglot'
     Plug 'mbbill/undotree'
-    Plug 'TaDaa/vimade'
+    Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'plasticboy/vim-markdown'
+    Plug 'sheerun/vim-polyglot'
     Plug 'tpope/vim-commentary'
-    " Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'tpope/vim-sleuth'
 
-    " Themes
-    Plug 'ntk148v/vim-horizon'
+    """ themes
     Plug 'colepeters/spacemacs-theme.vim'
-    Plug 'sainnhe/gruvbox-material'
-    Plug 'phanviet/vim-monokai-pro'
-    Plug 'vim-airline/vim-airline'
     Plug 'flazz/vim-colorschemes'
     Plug 'junegunn/limelight.vim'
     Plug 'morhetz/gruvbox'
+    Plug 'ntk148v/vim-horizon'
+    Plug 'phanviet/vim-monokai-pro'
+    Plug 'sainnhe/gruvbox-material'
+    Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " source $HOME/.config/nvim/plugins/aerojump.vim
 source $HOME/.config/nvim/plugins/coc.vim
+source $HOME/.config/nvim/plugins/easy-align.vim
 source $HOME/.config/nvim/plugins/goyo.vim
 source $HOME/.config/nvim/plugins/limelight.vim
 source $HOME/.config/nvim/plugins/nerdtree.vim
