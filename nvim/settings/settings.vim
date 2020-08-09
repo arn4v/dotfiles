@@ -42,3 +42,6 @@ noremap <Up> <Nop>
 noremap <Right> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
+
+" Fuzzy File Finder
+nnoremap <C-p> :GFiles<CR>
