@@ -55,15 +55,6 @@
   "explorer.keyMappings": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
-  },
-
-  "languageserver": {
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
-    }
   }
 
   // TODO b:coc_suggest_disable=1 GOYO
