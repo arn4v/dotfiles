@@ -22,7 +22,7 @@ set clipboard+=unnamedplus
 set number
 set splitright
 " set relativenumber
-let mapleader = ","
+let mapleader = "\\"
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 " File specific settings

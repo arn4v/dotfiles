@@ -24,13 +24,16 @@ nnoremap <C-p> :GFiles<CR>
 " inoremap <C-t>     <Esc>:tabnew<CR>
 
 " Vim Splits
-" nnoremap <C-j> <C-W><C-J>
-" nnoremap <C-k> <C-W><C-K>
-" nnoremap <C-l> <C-W><C-L>
-" nnoremap <C-h> <C-W><C-H>
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
 
 " Create new line without leaving normal mode
-" nnoremap <leader> zj o<Esc>k
-" nnoremap <leader> zk O<Esc>j
-nnoremap <silent> zj o<Esc>k
-nnoremap <silent> zk O<Esc>j
+nnoremap <leader>j o<Esc>k
+nnoremap <leader>k O<Esc>j
+" nnoremap <silent> zj o<Esc>k
+" nnoremap <silent> zk O<Esc>j
+
+" Clear selection on ,c
+nnoremap <cr> :noh<CR><CR>:<backspace>
