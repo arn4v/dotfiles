@@ -20,8 +20,9 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " yank in vim and then paste to other programs
 set clipboard+=unnamedplus
 set number
-set relativenumber
-let mapleader = ","
+set splitright
+" set relativenumber
+let mapleader = " "
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 " File specific settings
@@ -30,19 +31,4 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 autocmd filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 
 autocmd filetype typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 
 
-
-" Remap HJKL
-" noremap h <Nop>
-" noremap ; l
-" noremap j k
-" noremap k j
-" noremap l h
-
-" Disable the arrow keys
-noremap <Up> <Nop>
-noremap <Right> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-
-" Fuzzy File Finder
-nnoremap <C-p> :GFiles<CR>
+source $HOME/.config/nvim/settings/mappings.vim

@@ -1,4 +1,17 @@
 {
+  "coc.preferences.jumpCommand": "tab drop",
+  // autoformat
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python"
+  ],
+  "coc.preferences.hoverTarget": "float",
+
   // suggestions
   // "suggest.echodocSupport": true,
   // TODO add more labels and give them cool glyphs
@@ -24,19 +37,6 @@
   "list.indicator": ">",
   "list.selectedSignText": " ",
 
-  // autoformat
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "markdown",
-    "javascript",
-    "graphql",
-    "html",
-    "yaml",
-    "json",
-    "python"
-  ],
-  "coc.preferences.hoverTarget": "float",
-
   // python config
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
@@ -55,15 +55,6 @@
   "explorer.keyMappings": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
-  },
-
-  "languageserver": {
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
-    }
   }
 
   // TODO b:coc_suggest_disable=1 GOYO

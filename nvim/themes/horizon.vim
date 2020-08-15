@@ -1,4 +1,2 @@
-let g:airline_theme = 'horizon'
-set background=light
+set background=dark
 colorscheme horizon
-" let g:lightline = {'colorscheme' : 'horizon'}
