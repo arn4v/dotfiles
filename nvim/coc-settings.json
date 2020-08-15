@@ -1,4 +1,17 @@
 {
+  "coc.preferences.jumpCommand": "tab drop",
+  // autoformat
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python"
+  ],
+  "coc.preferences.hoverTarget": "float",
+
   // suggestions
   // "suggest.echodocSupport": true,
   // TODO add more labels and give them cool glyphs
@@ -23,19 +36,6 @@
   // list
   "list.indicator": ">",
   "list.selectedSignText": " ",
-
-  // autoformat
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "markdown",
-    "javascript",
-    "graphql",
-    "html",
-    "yaml",
-    "json",
-    "python"
-  ],
-  "coc.preferences.hoverTarget": "float",
 
   // python config
   "python.linting.enabled": true,

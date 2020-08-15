@@ -22,13 +22,13 @@ set clipboard+=unnamedplus
 set number
 set splitright
 " set relativenumber
-let mapleader = "\\"
+let mapleader = " "
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 " File specific settings
 " ----------------------
 " Javascript / Typescript / Vue
-" autocmd filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 
-" autocmd filetype typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 
+autocmd filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 
+autocmd filetype typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 
 
 source $HOME/.config/nvim/settings/mappings.vim

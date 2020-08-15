@@ -1,3 +1,7 @@
+nnoremap <Leader>+ :vertical resize +5<CR>
+nnoremap <Leader>- :vertical resize -5<CR>
+nnoremap <Leader>rp :resize 100<CR>
+
 " Remap HJKL
 " noremap h <Nop>
 " noremap ; l
@@ -16,6 +20,7 @@ nnoremap <C-p> :GFiles<CR>
 " inoremap <expr> <S-space> search('\%#[]>)}''"`]', 'n') ? '<Right>' : '<Tab>'    
 
 " Tab navigation like Firefox.
+nnoremap <leader>t :tabprevious<CR
 " nnoremap <C-S-tab> :tabprevious<CR>
 " nnoremap <C-tab>   :tabnext<CR>
 " nnoremap <C-t>     :tabnew<CR>
