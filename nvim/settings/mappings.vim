@@ -15,9 +15,6 @@ noremap <Right> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 
-" Fuzzy File Finder
-nnoremap <C-p> :GFiles<CR>
-" inoremap <expr> <S-space> search('\%#[]>)}''"`]', 'n') ? '<Right>' : '<Tab>'    
 
 " Tab navigation like Firefox.
 nnoremap <leader>t :tabprevious<CR

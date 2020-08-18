@@ -21,14 +21,15 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 set clipboard+=unnamedplus
 set number
 set splitright
-" set relativenumber
+set relativenumber
 let mapleader = " "
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+syntax on
 
 " File specific settings
 " ----------------------
 " Javascript / Typescript / Vue
-autocmd filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2 
-autocmd filetype typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2 
+autocmd filetype javascript setlocal tabstop=4 softtabstop=4 shiftwidth=4 
+autocmd filetype typescript setlocal tabstop=4 softtabstop=4 shiftwidth=4 
 
 source $HOME/.config/nvim/settings/mappings.vim
