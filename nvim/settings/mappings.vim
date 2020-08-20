@@ -1,13 +1,13 @@
-nnoremap <Leader>+ :vertical resize +5<CR>
-nnoremap <Leader>- :vertical resize -5<CR>
-nnoremap <Leader>rp :resize 100<CR>
+nnoremap <leader>+ :vertical resize +5<CR>
+nnoremap <leader>- :vertical resize -5<CR>
+nnoremap <leader>rp :resize 100<CR>
 
-" Remap HJKL
-" noremap h <Nop>
-" noremap ; l
-" noremap j k
-" noremap k j
-" noremap l h
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap X "_d
+
+" because some reason I heard from Primeagen
+inoremap <C-c> <esc>
 
 " Disable the arrow keys
 noremap <Up> <Nop>
@@ -15,15 +15,9 @@ noremap <Right> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 
-
 " Tab navigation like Firefox.
-nnoremap <leader>t :tabprevious<CR
-" nnoremap <C-S-tab> :tabprevious<CR>
-" nnoremap <C-tab>   :tabnext<CR>
-" nnoremap <C-t>     :tabnew<CR>
-" inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-" inoremap <C-tab>   <Esc>:tabnext<CR>i
-" inoremap <C-t>     <Esc>:tabnew<CR>
+nnoremap <leader>t :tabprevious<CR>
+nnoremap <C-t>     :tabnew<CR>
 
 " Vim Splits
 nnoremap <C-j> <C-W><C-J>
