@@ -33,3 +33,4 @@ nnoremap <leader>k O<Esc>j
 
 " Clear selection on ,c
 nnoremap <cr> :noh<CR><CR>:<backspace>
+
