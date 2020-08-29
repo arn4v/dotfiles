@@ -19,6 +19,9 @@
     \ 'coc-marketplace',
     \ ]
 
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <C-space> coc#refresh()
+
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -31,9 +34,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <C-space> coc#refresh()
-
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 if exists('*complete_info')
@@ -43,18 +43,31 @@ else
 endif
 
 " GoTo code navigation.
-nmap <silent>gd <Plug>(coc-definition)
-nmap <silent>gy <Plug>(coc-type-definition)
-nmap <silent>gi <Plug>(coc-implementation)
-nmap <silent>gr <Plug>(coc-references)
-nmap <silent>[g <Plug>(coc-diagnostic-prev)
-nmap <silent>]g <Plug>(coc-diagnostic-next)
+" nmap <silent>gd <Plug>(coc-definition)
+" nmap <silent>gy <Plug>(coc-type-definition)
+" nmap <silent>gi <Plug>(coc-implementation)
+" nmap <silent>gr <Plug>(coc-references)
+" nmap <silent>[g <Plug>(coc-diagnostic-prev)
+" nmap <silent>]g <Plug>(coc-diagnostic-next)
 " nmap <silent>g[ <Plug>(coc-diagnostic-prev)
 " nmap <silent>g] <Plug>(coc-diagnostic-next)
-nmap <leader>gp <Plug>(coc-diagnostic-prev-error)
-nmap <leader>gn <Plug>(coc-diagnostic-next-error)
-nnoremap <leader>cr :CocRestart
+" nmap <leader>gp <Plug>(coc-diagnostic-prev-error)
+" nmap <leader>gn <Plug>(coc-diagnostic-next-error)
+" nnoremap <leader>cr :CocRestart
 " nnoremap <C-m> :CocDiagnostics<CR>
+
+" GoTo code navigation.
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+nmap <leader>rr <Plug>(coc-rename)
+nmap <leader>g[ <Plug>(coc-diagnostic-prev)
+nmap <leader>g] <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
+nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
+nnoremap <leader>cr :CocRestart
+nnoremap <silent><M-S-f> :call CocAction('format')<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -105,6 +118,7 @@ omap af <Plug>(coc-funcobj-a)
 " xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
+" nmap <leader>f <Plug>CocAction('format')
 command! -nargs=0 Format :call CocAction('format')
 
 " Prettier
