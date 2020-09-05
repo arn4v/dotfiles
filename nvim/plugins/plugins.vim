@@ -5,8 +5,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'TaDaa/vimade'
     Plug 'Yggdroot/indentLine'
     Plug 'honza/vim-snippets'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
     Plug 'leafgarland/typescript-vim'
     Plug 'luochen1990/rainbow'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -14,6 +12,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'preservim/nerdtree'
     Plug 'sheerun/vim-polyglot'
     Plug 'tpope/vim-commentary'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
     if g:is_linux || g:is_mac
         Plug 'nvim-treesitter/nvim-treesitter'
         Plug 'ThePrimeagen/vim-apm'
@@ -34,8 +34,8 @@ call plug#end()
 " source $HOME/.config/nvim/plugins/syntastic.vim
 source $HOME/.config/nvim/plugins/airline.vim
 source $HOME/.config/nvim/plugins/coc.vim
-source $HOME/.config/nvim/plugins/fzf.vim
 source $HOME/.config/nvim/plugins/nerdtree.vim
+source $HOME/.config/nvim/plugins/fzf.vim
 if g:is_linux || g:is_mac
     source $HOME/.config/nvim/plugins/treesitter.vim
 endif
