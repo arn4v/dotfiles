@@ -14,13 +14,14 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'preservim/nerdtree'
     Plug 'sheerun/vim-polyglot'
     Plug 'tpope/vim-commentary'
-    if g:is_linux || g:is_mac
+    Plug 'itchyny/vim-cursorword'
+    if has('nvim-0.5') && g:is_linux || g:is_mac
         Plug 'nvim-treesitter/nvim-treesitter'
         Plug 'ThePrimeagen/vim-apm'
     endif
+
     if g:is_win || g:is_win
         Plug 'HerringtonDarkholme/yats.vim'
-        Plug 'itchyny/vim-cursorword'
     endif
 
     """ themes
@@ -36,6 +37,7 @@ source $HOME/.config/nvim/plugins/airline.vim
 source $HOME/.config/nvim/plugins/coc.vim
 source $HOME/.config/nvim/plugins/fzf.vim
 source $HOME/.config/nvim/plugins/nerdtree.vim
-if g:is_linux || g:is_mac
+
+if has('nvim-0.5') && g:is_linux || g:is_mac
     source $HOME/.config/nvim/plugins/treesitter.vim
 endif

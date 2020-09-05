@@ -34,3 +34,11 @@ nnoremap <leader>k O<Esc>j
 " Clear selection on ,c
 nnoremap <cr> :noh<CR><CR>:<backspace>
 
+" nnoremap <leader>n :set number!<cr>
+nnoremap <leader>n :set relativenumber!<cr>
+" nnoremap <leader>r :e!<cr>
+
+"Toggle Full Screen (NVIM QT)
+if g:is_win
+    noremap <silent><F11> :call rpcnotify(0, 'Gui', 'WindowFullScreen', !g:GuiWindowFullScreen)<CR>
+endif
