@@ -28,7 +28,7 @@ set splitbelow
 let mapleader=" "
 let g:mapleader=" "
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-" set relativenumber
+set relativenumber
 " let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " let base16colorspace=256  
 " highlight CursorLineNr cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d7000
