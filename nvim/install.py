@@ -5,18 +5,18 @@ from pathlib import Path
 
 home_dir = str(Path.home())
 cur_dir = os.path.dirname(os.path.abspath(__file__))
-nvim_dir = (
-    os.path.join(home_dir.replace("/", "\\"), "AppData\\Local\\nvim")
-    if platform.system() == "Windows"
-    else os.path.join(home_dir, ".config/nvim")
-)
 
 to_ignore = ["install.py", ".vscode"]
 
 for f in os.listdir(cur_dir):
     if f not in to_ignore:
+        nvim_dir = (
+            os.path.join(home_dir.replace("/", "\\"), "AppData\\Local\\nvim")
+            if platform.system() == "Windows"
+            else os.path.join(home_dir, ".config/nvim")
+        )
         if platform.system() == "Windows":
-            if f != "init.vim":
+            if f not in ["init.vim", "ginit.vim"]:
                 nvim_dir = os.path.join(home_dir.replace("/", "\\"), ".config", "nvim")
 
         if not os.path.exists(nvim_dir):
