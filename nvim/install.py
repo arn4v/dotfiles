@@ -15,16 +15,12 @@ for f in os.listdir(cur_dir):
             if platform.system() == "Windows"
             else os.path.join(home_dir, ".config/nvim")
         )
-        if platform.system() == "Windows":
-            if f not in ["init.vim", "ginit.vim"]:
-                nvim_dir = os.path.join(home_dir.replace("/", "\\"), ".config", "nvim")
 
         if not os.path.exists(nvim_dir):
             os.mkdir(nvim_dir)
 
         local_file = os.path.join(cur_dir, f)
         target_file = os.path.join(nvim_dir, f)
-
         if os.path.exists(target_file):
             if os.readlink(target_file) != local_file:
                 os.remove(target_file)

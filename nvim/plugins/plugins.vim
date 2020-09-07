@@ -20,10 +20,9 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'ThePrimeagen/vim-apm'
     endif
 
-    if has('nvim-0.5')
-        Plug 'nvim-treesitter/nvim-treesitter'
-    endif
-
+    " if has('nvim-0.5')
+    "     Plug 'nvim-treesitter/nvim-treesitter'
+    " endif
 
     """ themes
     Plug 'gruvbox-community/gruvbox'
@@ -31,13 +30,10 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-airline/vim-airline'
 call plug#end()
 
-" source $HOME/.config/nvim/plugins/indentline.vim
-" source $HOME/.config/nvim/plugins/rainbow.vim
-" source $HOME/.config/nvim/plugins/syntastic.vim
-source $HOME/.config/nvim/plugins/airline.vim
-source $HOME/.config/nvim/plugins/coc.vim
-source $HOME/.config/nvim/plugins/nerdtree.vim
-source $HOME/.config/nvim/plugins/fzf.vim
-if has('nvim-0.5')
-    source $HOME/.config/nvim/plugins/treesitter.vim
-endif
+execute('source' . $HOME . '/' . g:CONFIG_DIR . '/plugins/airline.vim')
+execute('source' . $HOME . '/' . g:CONFIG_DIR . '/plugins/coc.vim')
+execute('source' . $HOME . '/' . g:CONFIG_DIR . '/plugins/nerdtree.vim')
+execute('source' . $HOME . '/' . g:CONFIG_DIR . '/plugins/fzf.vim')
+" if has('nvim-0.5')
+"     source $HOME/.config/nvim/plugins/treesitter.vim
+" endif

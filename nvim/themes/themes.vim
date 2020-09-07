@@ -1,3 +1,3 @@
 " Theme Stuff
 set termguicolors
-source $HOME/.config/nvim/themes/gruvbox.vim
+execute('source' . $HOME . '/' . g:CONFIG_DIR . '/themes/gruvbox.vim')
