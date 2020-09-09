@@ -4,8 +4,8 @@ let g:is_mac = has('macunix')
 
 " Add XDG_CONFIG_DIR to env vars
 if has('gui')
-    source $HOME/$NVIM_CONFIG_DIR/ginit.vim
+    source $NVIM_CONFIG_DIR/ginit.vim
 endif
-source $HOME/$NVIM_CONFIG_DIR/settings/settings.vim
-source $HOME/$NVIM_CONFIG_DIR/plugins/plugins.vim
-source $HOME/$NVIM_CONFIG_DIR/themes/themes.vim
+source $NVIM_CONFIG_DIR/settings/settings.vim
+source $NVIM_CONFIG_DIR/plugins/plugins.vim
+source $NVIM_CONFIG_DIR/themes/themes.vim

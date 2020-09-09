@@ -25,14 +25,14 @@ call plug#begin('~/.config/nvim/plugged')
 
     """ themes
     Plug 'gruvbox-community/gruvbox'
-    " Plug 'vim-airline/vim-airline-themes'
-    " Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'vim-airline/vim-airline'
 call plug#end()
 
-" source $HOME/$NVIM_CONFIG_DIR/plugins/airline.vim
-source $HOME/$NVIM_CONFIG_DIR/plugins/coc.vim
-source $HOME/$NVIM_CONFIG_DIR/plugins/nerdtree.vim
-source $HOME/$NVIM_CONFIG_DIR/plugins/fzf.vim
+source $NVIM_CONFIG_DIR/plugins/airline.vim
+source $NVIM_CONFIG_DIR/plugins/coc.vim
+source $NVIM_CONFIG_DIR/plugins/nerdtree.vim
+source $NVIM_CONFIG_DIR/plugins/fzf.vim
 " if has('nvim-0.5')
-"     source $HOME/$NVIM_CONFIG_DIR/plugins/treesitter.vim
+"     source $NVIM_CONFIG_DIR/plugins/treesitter.vim
 " endif
