@@ -1,15 +1,15 @@
 {
   "coc.preferences.jumpCommand": "tab drop",
   // autoformat
-  //"coc.preferences.formatOnSaveFiletypes": [
-  //    "css",
-  //    "javascript",
-  //    "graphql",
-  //    "html",
-  //    "yaml",
-  //    "json",
-  //    "python"
-  //  ],
+  "coc.preferences.formatOnSaveFiletypes": [
+    //    "css",
+    //    "javascript",
+    //    "graphql",
+    //    "html",
+    //    "yaml",
+    //    "json",
+    "python"
+  ],
   "coc.preferences.hoverTarget": "float",
 
   // suggestions
