@@ -18,6 +18,7 @@
     \ 'coc-json',
     \ 'coc-marketplace',
     \ ]
+  " \ 'coc-explorer',
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <C-space> coc#refresh()
@@ -43,20 +44,6 @@ else
 endif
 
 " GoTo code navigation.
-" nmap <silent>gd <Plug>(coc-definition)
-" nmap <silent>gy <Plug>(coc-type-definition)
-" nmap <silent>gi <Plug>(coc-implementation)
-" nmap <silent>gr <Plug>(coc-references)
-" nmap <silent>[g <Plug>(coc-diagnostic-prev)
-" nmap <silent>]g <Plug>(coc-diagnostic-next)
-" nmap <silent>g[ <Plug>(coc-diagnostic-prev)
-" nmap <silent>g] <Plug>(coc-diagnostic-next)
-" nmap <leader>gp <Plug>(coc-diagnostic-prev-error)
-" nmap <leader>gn <Plug>(coc-diagnostic-next-error)
-" nnoremap <leader>cr :CocRestart
-" nnoremap <C-m> :CocDiagnostics<CR>
-
-" GoTo code navigation.
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gy <Plug>(coc-type-definition)
 nmap <leader>gi <Plug>(coc-implementation)
@@ -68,6 +55,7 @@ nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
 nnoremap <leader>cr :CocRestart
 nnoremap <silent><M-S-f> :call CocAction('format')<CR>
+nnoremap <M-m> :CocDiagnostics<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -84,7 +72,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-" nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>rn <Plug>(coc-rename)
 
 augroup mygroup
   autocmd!
@@ -174,9 +162,9 @@ let g:coc_explorer_global_presets = {
 \   }
 \ }
 "nmap <silent> <space>e :CocCommand explorer<CR>
-" nnoremap <silent> <leader>e :CocCommand explorer<CR>
-" nmap <space>f :CocCommand explorer --preset floatingRightside<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+" nnoremap <C-n> :CocCommand explorer<CR>
+" nmap <silent><leader>e :CocCommand explorer --preset floatingRightside<CR>
+" autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 " Snippets
 " Use <C-l> for trigger snippet expand.

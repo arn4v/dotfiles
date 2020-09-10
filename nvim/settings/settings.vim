@@ -21,7 +21,12 @@ set colorcolumn=80
 " set ttyfast  " this is the 21st century, people
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 " yank in vim and then paste to other programs
-set clipboard+=unnamedplus
+au CursorHold,CursorHoldI * set clipboard=unnamedplus
+" if g:is_win
+"     set clipboard=unnamed
+" else
+"     set clipboard=unnamedplus
+" endif
 set number
 set splitright
 set splitbelow
@@ -33,4 +38,4 @@ set relativenumber
 " let base16colorspace=256  
 " highlight CursorLineNr cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d7000
 
-source $HOME/.config/nvim/settings/mappings.vim
+source $NVIM_CONFIG_DIR/settings/mappings.vim

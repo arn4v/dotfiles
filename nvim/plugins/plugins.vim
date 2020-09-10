@@ -6,11 +6,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'honza/vim-snippets'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug 'preservim/nerdtree'
+    Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFocus'] }
     Plug 'tpope/vim-commentary'
-    if has('nvim-0.5') && g:is_linux || g:is_mac
-        Plug 'ThePrimeagen/vim-apm'
-    endif
+    Plug 'tpope/vim-fugitive'
 
     " Language Plugins
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -25,6 +23,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     """ themes
     Plug 'gruvbox-community/gruvbox'
+    Plug 'sainnhe/gruvbox-material'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'vim-airline/vim-airline'
 call plug#end()
