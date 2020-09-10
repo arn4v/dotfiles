@@ -19,13 +19,12 @@ set hlsearch
 set noswapfile
 set incsearch
 set nobackup
-set undodir=~/.nvim/undodir
+set undodir=~/.config/nvim/undodir
 set nowritebackup
 set mouse=a
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 " yank in vim and then paste to other programs
-xnoremap y "+y
 xnoremap Y "+y
 " au CursorHold,CursorHoldI * set clipboard+=unnamedplus
 " set clipboard=unnamedplus
@@ -80,15 +79,11 @@ nnoremap <M-h> <C-W><C-H>
 " Create new line without leaving normal mode
 nnoremap <leader>j o<Esc>k
 nnoremap <leader>k O<Esc>j
-" nnoremap <silent> zj o<Esc>k
-" nnoremap <silent> zk O<Esc>j
 
 " Clear selection on ,c
-nnoremap <cr> :noh<CR><CR>:<backspace>
-
-" nnoremap <leader>n :set number!<cr>
+nnoremap <leader>hh :noh<CR>
+" nnoremap <cr> :noh<CR><CR>:<backspace>
 nnoremap <leader>n :set relativenumber!<cr>
-" nnoremap <leader>r :e!<cr>
 
 " Toggle Full Screen (NVIM QT)
 if g:is_win
@@ -99,7 +94,7 @@ endif
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 " start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 " open terminal on ctrl+n
 function! OpenTerminal()
     if g:is_win
@@ -130,10 +125,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'pangloss/vim-javascript'
     Plug 'sheerun/vim-polyglot'
 
-    " if has('nvim-0.5')
-    "     Plug 'nvim-treesitter/nvim-treesitter'
-    " endif
-
     """ themes
     Plug 'gruvbox-community/gruvbox'
     Plug 'sainnhe/gruvbox-material'
@@ -141,9 +132,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-" if has('nvim-0.5')
-"     source $NVIM_CONFIG_DIR/plugins/treesitter.vim
-" endif
 "Ctrl-S Save
 nnoremap <C-s> :w<CR>
 noremap <C-s> <C-o>:w<CR>
@@ -157,10 +145,9 @@ noremap <C-s> <C-o>:w<CR>
 "     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " endif
-" colorscheme gruvbox
-"
 let g:gruvbox_material_background = 'hard'
 colorscheme gruvbox-material
+" -------------------
 " -------------------
 " -------------------
 
@@ -189,7 +176,6 @@ let g:airline#extensions#tagbar#enabled = 1
 " -------------------
 " -------------------
 
-
 " -------------------
 " ------- COC -------
 " -------------------
@@ -213,7 +199,6 @@ let g:airline#extensions#tagbar#enabled = 1
     \ 'coc-json',
     \ 'coc-marketplace',
     \ ]
-  " \ 'coc-explorer',
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <C-space> coc#refresh()
@@ -403,3 +388,12 @@ nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --excl
 " -------------------------------
 " ----------FZF FINISH-----------
 " -------------------------------
+
+" lua <<EOF
+" require'nvim-treesitter.configs'.setup {
+"     ensure_installed = "all",     -- one of "all", "language", or a list of languages
+"     highlight = {
+"         enable = true,              -- false will disable the whole extension
+"     },
+" }
+" EOF
