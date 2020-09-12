@@ -1,41 +1,39 @@
-syntax on
-
-set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
+" Settings
+" au CursorHold,CursorHoldI * set clipboard+=unnamedplus
+" set clipboard=unnamedplus
 " set nu
-set nowrap
-set smartcase
-set ignorecase
+" yank in vim and then paste to other programs
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+let g:mapleader=" "
+let mapleader=" "
+syntax on
+filetype plugin indent on 
+set colorcolumn=80
+set expandtab
 set hidden
 set hlsearch
-set noswapfile
+set ignorecase
 set incsearch
-set nobackup
-set undodir=~/.vim/undodir
-set nowritebackup
 set mouse=a
-set colorcolumn=80
-" set ttyfast  " this is the 21st century, people
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-" yank in vim and then paste to other programs
-au CursorHold,CursorHoldI * set clipboard=unnamedplus
-" if g:is_win
-"     set clipboard=unnamed
-" else
-"     set clipboard=unnamedplus
-" endif
+set nobackup
+set noerrorbells
+set noswapfile
+set nowrap
+set nowritebackup
 set number
-set splitright
-set splitbelow
-let mapleader=" "
-let g:mapleader=" "
-let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 set relativenumber
+set shiftwidth=4
+set smartcase
+set smartindent
+set splitbelow
+set splitright
+set tabstop=4 softtabstop=4
+set termguicolors
+set undodir=~/.config/nvim/undodir
+set backspace=indent,eol,start
+xnoremap Y "+y
 " let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " let base16colorspace=256  
-" highlight CursorLineNr cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d7000
 
 source $NVIM_CONFIG_DIR/settings/mappings.vim

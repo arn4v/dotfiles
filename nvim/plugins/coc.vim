@@ -1,3 +1,8 @@
+
+
+" -------------------
+" ------- COC -------
+" -------------------
   let g:coc_global_extensions = [
     \ 'coc-snippets',
     \ 'coc-actions',
@@ -18,7 +23,6 @@
     \ 'coc-json',
     \ 'coc-marketplace',
     \ ]
-  " \ 'coc-explorer',
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <C-space> coc#refresh()
@@ -143,24 +147,24 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " Explorer
-let g:coc_explorer_global_presets = {
-\   'floating': {
-\      'position': 'floating',
-\   },
-\   'floatingLeftside': {
-\      'position': 'floating',
-\      'floating-position': 'left-center',
-\      'floating-width': 30,
-\   },
-\   'floatingRightside': {
-\      'position': 'floating',
-\      'floating-position': 'right-center',
-\      'floating-width': 30,
-\   },
-\   'simplify': {
-\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-\   }
-\ }
+" let g:coc_explorer_global_presets = {
+" \   'floating': {
+" \      'position': 'floating',
+" \   },
+" \   'floatingLeftside': {
+" \      'position': 'floating',
+" \      'floating-position': 'left-center',
+" \      'floating-width': 30,
+" \   },
+" \   'floatingRightside': {
+" \      'position': 'floating',
+" \      'floating-position': 'right-center',
+" \      'floating-width': 30,
+" \   },
+" \   'simplify': {
+" \     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+" \   }
+" \ }
 "nmap <silent> <space>e :CocCommand explorer<CR>
 " nnoremap <C-n> :CocCommand explorer<CR>
 " nmap <silent><leader>e :CocCommand explorer --preset floatingRightside<CR>
@@ -181,5 +185,6 @@ let g:coc_snippet_prev = '<C-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
-
-" verbose imap <tab>
+" -------------------------------
+" ----------COC FINISH-----------
+" -------------------------------

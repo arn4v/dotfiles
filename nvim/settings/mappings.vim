@@ -1,3 +1,4 @@
+" Mappings
 nnoremap <M-=> :vertical resize +5<CR>
 nnoremap <M--> :vertical resize -5<CR>
 nnoremap <M-\> :resize +5<CR>
@@ -36,26 +37,23 @@ nnoremap <M-h> <C-W><C-H>
 " Create new line without leaving normal mode
 nnoremap <leader>j o<Esc>k
 nnoremap <leader>k O<Esc>j
-" nnoremap <silent> zj o<Esc>k
-" nnoremap <silent> zk O<Esc>j
 
 " Clear selection on ,c
-nnoremap <cr> :noh<CR><CR>:<backspace>
-
-" nnoremap <leader>n :set number!<cr>
+nnoremap <leader>h :noh<CR>
+nnoremap <leader>ee :e!<CR>
+" nnoremap <cr> :noh<CR><CR>:<backspace>
 nnoremap <leader>n :set relativenumber!<cr>
-" nnoremap <leader>r :e!<cr>
 
 " Toggle Full Screen (NVIM QT)
 if g:is_win
     noremap <silent><F11> :call rpcnotify(0, 'Gui', 'WindowFullScreen', !g:GuiWindowFullScreen)<CR>
 endif
-"
+
 " open new split panes to right and below
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 " start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 " open terminal on ctrl+n
 function! OpenTerminal()
     if g:is_win
