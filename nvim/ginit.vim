@@ -4,3 +4,8 @@ if exists('g:GuiLoaded')
     GuiLinespace 2
     GuiFont! JetBrains Mono Medium:h10:l
 endif
+
+" Toggle Full Screen (NVIM QT)
+if g:is_win
+    noremap <silent><F11> :call rpcnotify(0, 'Gui', 'WindowFullScreen', !g:GuiWindowFullScreen)<CR>
+endif
