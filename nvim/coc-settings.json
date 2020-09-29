@@ -10,7 +10,7 @@
     //    "json",
     "python"
   ],
-  "coc.preferences.hoverTarget": "float",
+  /* "coc.preferences.hoverTarget": "float", */
 
   // suggestions
   // "suggest.echodocSupport": true,

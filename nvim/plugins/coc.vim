@@ -60,6 +60,7 @@ nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
 nmap <leader>cr :CocRestart<CR>
 nmap <leader>cm :CocList marketplace<CR>
+nmap <leader>ccm :CocCommand<CR>
 nmap <leader>cs :CocSearch 
 nmap <leader>cp :CocList project<CR>
 vmap <leader>cf <Plug>(coc-format-selected)
