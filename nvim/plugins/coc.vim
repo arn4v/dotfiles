@@ -1,26 +1,26 @@
 " -------------------
 " ------- COC -------
 " -------------------
-  let g:coc_global_extensions = [
-    \ 'coc-snippets',
-    \ 'coc-actions',
-    \ 'coc-lists',
-    \ 'coc-pairs',
-    \ 'coc-tsserver',
-    \ 'coc-html',
-    \ 'coc-css',
-    \ 'coc-emoji',
-    \ 'coc-cssmodules',
-    \ 'coc-yaml',
-    \ 'coc-python',
-    \ 'coc-svg',
-    \ 'coc-prettier',
-    \ 'coc-vimlsp',
-    \ 'coc-xml',
-    \ 'coc-yank',
-    \ 'coc-json',
-    \ 'coc-marketplace',
-    \ ]
+" let g:coc_global_extensions = [
+"   \ 'coc-snippets',
+"   \ 'coc-actions',
+"   \ 'coc-lists',
+"   \ 'coc-pairs',
+"   \ 'coc-tsserver',
+"   \ 'coc-html',
+"   \ 'coc-css',
+"   \ 'coc-emoji',
+"   \ 'coc-cssmodules',
+"   \ 'coc-yaml',
+"   \ 'coc-python',
+"   \ 'coc-svg',
+"   \ 'coc-prettier',
+"   \ 'coc-vimlsp',
+"   \ 'coc-xml',
+"   \ 'coc-yank',
+"   \ 'coc-json',
+"   \ 'coc-marketplace',
+"   \ ]
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <C-space> coc#refresh()
@@ -58,7 +58,7 @@ nmap <leader>g[ <Plug>(coc-diagnostic-prev)
 nmap <leader>g] <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
-nmap <leader>cr :CocRestart<CR>
+nmap <leader>cr :CocRestart<CR><CR>
 nmap <leader>cm :CocList marketplace<CR>
 nmap <leader>ccm :CocCommand<CR>
 nmap <leader>cs :CocSearch 
@@ -110,6 +110,11 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Explorer
+" map <silent> <C-n> :CocCommand explorer<CR>
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'CocCommand explorer' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that

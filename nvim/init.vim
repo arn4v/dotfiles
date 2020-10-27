@@ -6,34 +6,39 @@ let g:is_mac = has('macunix')
 " # PLUGINS
 " =============================================================================
 call plug#begin('~/.config/nvim/plugged')
+    " Plug 'dkarter/bullets.vim', { 'for': ['markdown', 'gitcommit', 'text'] }
+    " Plug 'justinmk/vim-sneak'
+    " Plug 'preservim/nerdcommenter'
+    " Plug 'psliwka/vim-smoothie'
+    " Plug 'tpope/vim-fugitive'
+    " Plug 'tpope/vim-sensible'
     Plug 'Yggdroot/indentLine'
     Plug 'airblade/vim-rooter'
-    Plug 'dkarter/bullets.vim', { 'for': ['markdown', 'gitcommit', 'text'] }
     Plug 'itchyny/vim-cursorword'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'luochen1990/rainbow'
     Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree', 'NERDTreeFocus'] }
     Plug 'tpope/vim-commentary'
-    Plug 'tpope/vim-fugitive'
+    Plug 'mattn/emmet-vim', {'for': ['javascript.jsx', 'html', 'typescript.tsx']}
 
-    " Plug 'jiangmiao/auto-pairs'
+
+    " Plug 'f-person/pubspec-assist-nvim', { 'for': ['dart'] }
+    Plug 'jiangmiao/auto-pairs'
     " Plug 'kevinoid/vim-jsonc', { 'for': 'jsonc' }
     Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'typescript.tsx'] }
     Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['javascript.jsx', 'typescript.tsx'] }
     Plug 'alvan/vim-closetag', { 'for': ['html', 'php', 'javascript', 'javascript.jsx', 'typescript', 'typescript.tsx'] }
+    Plug 'dart-lang/dart-vim-plugin', { 'for': ['dart'] }
     Plug 'davidhalter/jedi-vim', { 'for': ['python']}
     Plug 'honza/vim-snippets'
     Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescript.tsx'] }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'pangloss/vim-javascript', { 'for': ['javascript','javascript.jsx'] }
-    Plug 'dart-lang/dart-vim-plugin', { 'for': ['dart'] }
-    Plug 'thosakwe/vim-flutter', { 'for': ['dart'] }
     Plug 'neoclide/jsonc.vim', { 'for': ['jsonc'] }
-    Plug 'f-person/pubspec-assist-nvim'
+    Plug 'pangloss/vim-javascript', { 'for': ['javascript','javascript.jsx'] }
+    Plug 'thosakwe/vim-flutter', { 'for': ['dart'] }
 
     Plug 'sainnhe/gruvbox-material'
-    " Plug 'adigitoleo/vim-mellow'
     Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
@@ -104,12 +109,6 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <C-s> :w<CR>
 noremap <C-s> <C-o>:w<CR>
 
-" Disable the arrow keys
-nnoremap <Right> :vertical resize +5<CR>
-nnoremap <Left> :vertical resize -5<CR>
-nnoremap <Up> :resize +5<CR>
-nnoremap <Down> :resize -5<CR>
-
 " Tab navigation like Firefox.
 nnoremap <leader>t :tabprevious<CR>
 nnoremap <C-t>     :tabnew<CR>
@@ -119,6 +118,16 @@ nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
+
+" Disable the arrow keys
+nnoremap <M-l> :vertical resize +5<CR>
+nnoremap <M-h> :vertical resize -5<CR>
+nnoremap <M-k> :resize +5<CR>
+nnoremap <M-j> :resize -5<CR>
+nnoremap <Right> :vertical resize +5<CR>
+nnoremap <Left> :vertical resize -5<CR>
+nnoremap <Up> :resize +5<CR>
+nnoremap <Down> :resize -5<CR>
 
 " Create new line without leaving normal mode
 nnoremap <leader>j o<Esc>k
@@ -146,15 +155,15 @@ nnoremap <M-`> :call OpenTerminal()<CR>
 " =============================================================================
 let g:gruvbox_material_background = 'hard'
 colorscheme gruvbox-material
-" set background=light
-" colorscheme mellow
 
 " =============================================================================
 " # Plug 'preservim/nerdtree'
 " =============================================================================
-let g:NERDTreeIgnore = ['^node_modules$']
+let g:NERDTreeIgnore = ['^node_modules$', '^.next$', '^.git$']
 let NERDTreeShowHidden=1
 map <silent> <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 " =============================================================================
 " # Plug 'junegunn/fzf.vim'
@@ -223,10 +232,12 @@ let g:bullets_enable_in_empty_buffers = 0 " default = 1
 " =============================================================================
 " # FILETYPE SPECIFIC
 " =============================================================================
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd BufNewFile,BufRead *.dart set filetype=dart
 autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-autocmd BufNewFile,BufRead tsconfig.json set filetype=jsonc
+autocmd BufNewFile,BufRead coc-settings.json,tsconfig.json set filetype=jsonc
+autocmd Filetype javascript,dart,typescript,javascript.jsx,typescript.tsx setlocal ts=4 sts=4 sw=4
+autocmd Filetype javascript.jsx,typescript.tsx set wrap linebreak
 autocmd Filetype markdown setlocal textwidth=80
 
 " source $NVIM_CONFIG_DIR/plugins/nvim-lsp.vim
