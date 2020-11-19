@@ -47,7 +47,13 @@ else
 endif
 
 " GoTo code navigation.
+" function! s:cocActionsOpenFromSelected(type) abort
+"   execute 'CocCommand actions.open ' . a:type
+" endfunction
+" xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+" nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 xmap <leader>a  <Plug>(coc-codeaction-selected)
+" nmap <C-a> <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gy <Plug>(coc-type-definition)
@@ -67,6 +73,9 @@ vmap <leader>cf <Plug>(coc-format-selected)
 nmap <leader>cf <Plug>(coc-format-selected)
 nnoremap <leader>cr :CocRestart
 nnoremap <silent><M-S-f> :call CocAction('format')<CR>
+augroup docThis
+    au FileType typescript.tsx,typescript,javascript,javascript.jsx nnoremap <leader>dd :call CocAction('runCommand', 'docthis.documentThis')<CR>
+augroup END
 nnoremap <M-m> :CocDiagnostics<CR>
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
