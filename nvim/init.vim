@@ -117,7 +117,7 @@ tnoremap <Esc> <C-\><C-n>
 
 " CTRL-S Save
 nnoremap <C-s> :w<CR>
-noremap <C-s> <C-o>:w<CR>
+" noremap <C-s> <C-o>:w<CR>
 
 " Tab navigation like Firefox.
 nnoremap <C-]> :tabnext<CR>
@@ -155,6 +155,8 @@ noremap <leader>R  :%s///gc<Left><Left><Left>
 nnoremap <S-h> :noh<CR>
 nnoremap <leader>n :set relativenumber!<cr>
 nnoremap <leader>N :set number!<cr>
+nnoremap <M-/> :Commentary<CR>
+vnoremap <M-/> :Commentary<CR>
 
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-k> <C-\><C-n>
