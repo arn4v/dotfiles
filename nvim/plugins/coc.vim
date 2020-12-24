@@ -52,6 +52,7 @@ endif
 " endfunction
 " xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 " nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+nmap <M-P> :CocCommand<CR>
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <C-a> <Plug>(coc-codeaction-selected)
 xmap <C-a> <Plug>(coc-codeaction-selected)
@@ -65,7 +66,7 @@ nmap <leader>g[ <Plug>(coc-diagnostic-prev)
 nmap <leader>g] <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
-nmap <leader>cr :CocRestart<CR><CR>
+nmap <leader>cr :CocRestart<CR>
 nmap <leader>cm :CocList marketplace<CR>
 nmap <leader>ccm :CocCommand<CR>
 nmap <leader>cs :CocSearch 

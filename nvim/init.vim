@@ -39,10 +39,16 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'pangloss/vim-javascript', { 'for': ['javascript','javascript.jsx'] }
     Plug 'thosakwe/vim-flutter', { 'for': ['dart'] }
     Plug 'pantharshit00/vim-prisma'
+    " Plug 'nvim-treesitter/nvim-treesitter'
 
     Plug 'sainnhe/gruvbox-material'
+    Plug 'joshdick/onedark.vim'
+
+    Plug 'ghifarit53/tokyonight-vim'
     Plug 'ntk148v/vim-horizon'
     Plug 'ryanoasis/vim-devicons'
+
+    let g:onedark_termcolors=16
 call plug#end()
 
 " =============================================================================
@@ -54,7 +60,7 @@ call plug#end()
 " let mapleader=";"
 let g:mapleader=" "
 let mapleader=" "
-syntax on
+syntax enable
 filetype plugin indent on 
 set autoread
 set hidden
@@ -104,6 +110,7 @@ endif
 " =============================================================================
 " # KEYMAPS
 " =============================================================================
+nnoremap <leader>so :so %<CR>
 nnoremap <leader>rv :vertical resize 100<CR>
 nnoremap <leader>rh :resize 100<CR>
 
@@ -130,12 +137,6 @@ nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
-
-" VSCode like Alt+key to move lines
-" nnoremap <M-j>       : m .+1<CR>==
-" nnoremap <M-k>       : m .-2<CR>==
-" vnoremap <M-j>       : m '>+1<CR>gv=gv
-" vnoremap <M-k>       : m '<-2<CR>gv=gv
 
 " Disable the arrow keys
 nnoremap <Right> :vertical resize +5<CR>
@@ -174,6 +175,8 @@ nnoremap <M-`> :call OpenTerminal()<CR>
 " =============================================================================
 " # THEMES
 " =============================================================================
+let g:tokyonight_style = 'storm' " available: night, storm
+let g:tokyonight_enable_italic = 1
 let g:gruvbox_material_background = 'hard'
 colorscheme gruvbox-material
 
@@ -314,3 +317,4 @@ autocmd Filetype markdown let b:coc_suggest_disable = 1
 
 " source $NVIM_CONFIG_DIR/plugins/nvim-lsp.vim
 source $NVIM_CONFIG_DIR/plugins/coc.vim
+" lua require 'arn4v'
