@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/arn4v/personal/blinq/packages/api-next'
+let g:netrw_dirhist_2='/home/arn4v/.dotfiles'
+let g:netrw_dirhist_1='/home/arn4v/whatiread/src'

@@ -7,9 +7,6 @@ let g:is_mac = has('macunix')
 " =============================================================================
 call plug#begin('~/.config/nvim/plugged')
     Plug 'dkarter/bullets.vim', { 'for': ['markdown', 'gitcommit', 'text'] }
-    " Plug 'tpope/vim-fugitive'
-    " Plug 'tpope/vim-sensible'
-    " Plug 'Yggdroot/indentLine'
     Plug 'airblade/vim-rooter'
     Plug 'itchyny/vim-cursorword'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -18,37 +15,30 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'luochen1990/rainbow'
     Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTree', 'NERDTreeFocus'] }
     Plug 'tpope/vim-commentary'
-    Plug 'mattn/emmet-vim', {'for': ['javascript.jsx', 'html', 'typescript.tsx']}
+    Plug 'mattn/emmet-vim', {'for': ['javascript.jsx', 'html', 'typescript.tsx', 'javascriptreact', 'typescriptreact']}
     Plug 'tpope/vim-surround'
 
 
     " Plug 'f-person/pubspec-assist-nvim', { 'for': ['dart'] }
     Plug 'jiangmiao/auto-pairs'
-    Plug 'evanleck/vim-svelte', { 'for': ['svelte'] }
-    " Plug 'kevinoid/vim-jsonc', { 'for': 'jsonc' }
     Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript', 'javascript.jsx','typescript', 'typescript.tsx'], 'do': 'make install' }
-    Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'typescript.tsx'] }
-    Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['javascript.jsx', 'typescript.tsx'] }
-    Plug 'alvan/vim-closetag', { 'for': ['html', 'php', 'javascript', 'javascript.jsx', 'typescript', 'typescript.tsx'] }
-    Plug 'dart-lang/dart-vim-plugin', { 'for': ['dart'] }
+    Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'typescript.tsx', 'typescriptreact'] }
+    Plug 'MaxMEllon/vim-jsx-pretty', { 'for': ['javascript.jsx', 'typescript.tsx', 'typescriptreact'] }
+    Plug 'alvan/vim-closetag', { 'for': ['html', 'php', 'javascript', 'javascript.jsx', 'typescript', 'typescript.tsx', 'javascriptreact', 'typescriptreact'] }
     Plug 'davidhalter/jedi-vim', { 'for': ['python']}
     Plug 'honza/vim-snippets'
-    Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescript.tsx'] }
+    Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescript.tsx', 'typescriptreact'] }
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'neoclide/jsonc.vim', { 'for': ['jsonc'] }
-    Plug 'pangloss/vim-javascript', { 'for': ['javascript','javascript.jsx'] }
-    Plug 'thosakwe/vim-flutter', { 'for': ['dart'] }
+    Plug 'pangloss/vim-javascript', { 'for': ['javascript','javascript.jsx', 'javascriptreact', 'typescriptreact'] }
     Plug 'pantharshit00/vim-prisma'
     " Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'jparise/vim-graphql'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
+    
     Plug 'sainnhe/gruvbox-material'
-    Plug 'joshdick/onedark.vim'
-
-    Plug 'ghifarit53/tokyonight-vim'
-    Plug 'ntk148v/vim-horizon'
-    Plug 'ryanoasis/vim-devicons'
-
-    let g:onedark_termcolors=16
 call plug#end()
 
 " =============================================================================
@@ -58,6 +48,7 @@ call plug#end()
 " set clipboard=unnamedplus
 " let g:mapleader=";"
 " let mapleader=";"
+let g:onedark_termcolors=16
 let g:mapleader=" "
 let mapleader=" "
 syntax enable
@@ -91,11 +82,12 @@ set shortmess+=c
 " =============================================================================
 " let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " let base16colorspace=256  
+set t_Co=256
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set colorcolumn=80
 set number
-set relativenumber
+set norelativenumber
 set mouse=a
 set splitbelow splitright
 
@@ -179,6 +171,8 @@ let g:tokyonight_style = 'storm' " available: night, storm
 let g:tokyonight_enable_italic = 1
 let g:gruvbox_material_background = 'hard'
 colorscheme gruvbox-material
+" let ayucolor = 'dark'
+" colorscheme ayu
 
 " =============================================================================
 " # Plug 'preservim/nerdtree'
@@ -304,17 +298,16 @@ let g:blamer_delay = 250
 " =============================================================================
 " # FILETYPE SPECIFIC
 " =============================================================================
-autocmd BufNewFile,BufRead *.dart set filetype=dart
-autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-autocmd BufNewFile,BufRead *.svelte set filetype=svelte
+" autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+" autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+autocmd BufNewFile,BufRead,BufEnter *.jsx set filetype=javascriptreact
+autocmd BufNewFile,BufRead,BufEnter *.tsx set filetype=typescriptreact
+autocmd FileType javascriptreact,typescriptreact EmmetInstal
 autocmd BufNewFile,BufRead coc-settings.json,tsconfig.json set filetype=jsonc
 " autocmd Filetype javascript,dart,typescript,javascript.jsx,typescript.tsx setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript,dart,typescript,javascript.jsx,typescript.tsx setlocal ts=4 sts=4 sw=4
+autocmd Filetype javascript,dart,typescript,javascript.jsx,typescript.tsx setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript.jsx,typescript.tsx set wrap linebreak
 autocmd Filetype markdown setlocal textwidth=80 
 autocmd Filetype markdown let b:coc_suggest_disable = 1
 
-" source $NVIM_CONFIG_DIR/plugins/nvim-lsp.vim
 source $NVIM_CONFIG_DIR/plugins/coc.vim
-" lua require 'arn4v'
